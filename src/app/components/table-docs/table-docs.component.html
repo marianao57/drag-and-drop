@@ -1,0 +1,38 @@
+<div class="docs-container">
+  <div class="docs-lists">
+    <div class="docs-list">
+      <h2>Documentos originales</h2>
+      <ul>
+        <li *ngFor="let file of filesUploaded">
+          <div class="doc-file-info">
+            <img class="doc-icon" src="../../../assets/images/doc.png" alt="">
+            <span class="doc-file-name">{{ file.file.name }}</span>
+          </div>
+          <button class="btn-outline" (click)="downloadFileUpload(file.file.name)">Ver</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="docs-list">
+      <h2>Documentos traducidos</h2>
+      <ul>
+        <li *ngFor="let file of filesGenerated">
+          <div class="doc-file-info">
+            <div class="doc-row">
+              <div class="doc-file-info">
+                <img class="doc-icon" src="../../../assets/images/doc_ready.png" alt="">
+                <span class="doc-file-name">{{ file.file.name }}</span>
+              </div>
+              <button class="btn-outline" (click)="downloadFile(file.downloadUrl)">Descargar</button>
+            </div>
+          </div>
+        </li>
+        <li *ngIf="showLoading">
+          <div class="doc-loader">
+            <img class="doc-loader-img" src="../../../assets/images/loading.gif" alt="">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

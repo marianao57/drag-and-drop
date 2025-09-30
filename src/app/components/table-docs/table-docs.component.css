@@ -1,0 +1,146 @@
+/* Layout principal */
+.docs-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  margin-top: 2rem;
+}
+
+.docs-lists {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+@media (max-width: 810px) {
+  .docs-lists {
+    flex-direction: column;
+    width: 85%;
+    gap: 1.5rem;
+  }
+}
+
+/* Caja de documentos */
+.docs-list {
+  flex: 1 1 0;
+  background: #f7f9fc;
+  border: 1px solid #041b6b;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 16px rgba(4, 27, 107, 0.08);
+}
+
+.docs-list h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #041b6b;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.docs-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.docs-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #2c2c2c;
+  box-shadow: 0 2px 6px rgba(4, 27, 107, 0.06);
+  transition: all 0.25s ease;
+}
+
+.docs-list li:hover {
+  background: #f1f4fc;
+  box-shadow: 0 4px 12px rgba(4, 27, 107, 0.15);
+}
+
+/* Información del archivo */
+.doc-file-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.doc-file-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+/* Icono de documento */
+.doc-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Loader de carga */
+.doc-loader {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  overflow: hidden;
+}
+
+.doc-loader-img {
+  width: 20%;
+  max-height: 36px;
+}
+
+/* Documento traducido fila */
+.doc-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botones */
+button {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline {
+  border: 1px solid #041b6b;
+  background: transparent;
+  color: #041b6b;
+}
+
+.btn-outline:hover {
+  border: 1px solid #046c34;
+  background: #046c34;
+  color: #fff;
+}

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="transer-upload" dragDrop (files)="onDropDocuments($event)">
+    <img class="image" src="../../../assets/images/file-upload.png" alt="" />
+    <span class="transer-upload__text">Arrastre aquí los documentos</span>
+    <span class="transer-upload__text-second">
+      o
+      <span
+        tabindex="0"
+        class="transer-upload__text-second-click"
+        (click)="fileInput.click()"
+      >
+        busque archivos
+      </span>
+      en su ordenador
+      <!-- Input oculto solo para PDF -->
+      <input
+        type="file"
+        accept="application/pdf"
+        style="display: none"
+        #fileInput
+        (change)="
+          onDropDocuments(fileInput.files ? toArray(fileInput.files) : [])
+        "
+      />
+    </span>
+    <span class="transer-upload__text-extensions">
+      Formatos admitidos (pdf) {{ maxSize }}MB
+    </span>
+  </div>
+</div>
+<app-table-docs
+  [filesUploaded]="filesUploadedArray"
+  [filesGenerated]="filesGeneratedArray"
+  [showLoading]="isLoading"
+></app-table-docs>
